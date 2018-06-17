@@ -1,5 +1,6 @@
 # collectd_monitor
 
+```
 CREATE TABLE collectd_bits.collectd (
     host text,
     plugin text,
@@ -27,3 +28,4 @@ CREATE TABLE collectd_bits.collectd (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
+```
