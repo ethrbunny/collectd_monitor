@@ -60,7 +60,7 @@ func initLog(
 
 func writeRow(msg Kmsg, session *gocql.Session) {
 //    if err := session.Query("insert into collectd(host, plugin, stamp, dsnames, dstypes, interval, plugin_instance, meta, plugin_type, type_instance, values) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", ).exec(); err != nil {
-    if err := session.Query("insert into collectd(host, plugin, stamp, dsnames, dstypes, interval, plugin_instance, plugin_type, type_instance, values) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", msg.Host, msg.Plugin, timeutil.TimestampFromFloat64(msg.Time).Time, msg.Dsnames[0], msg.Dstypes[0], msg.Interval, msg.Plugin_instance, msg.Plugin, msg.Ctype, msg.Values).Exec(); err != nil {
+    if err := session.Query("insert into collectd(host, plugin, stamp, dsnames, dstypes, interval, plugin_instance, plugin_type, type_instance, values) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", msg.Host, msg.Plugin, timeutil.TimestampFromFloat64(msg.Time).Time, msg.Dsnames, msg.Dstypes, msg.Interval, msg.Plugin_instance, msg.Plugin, msg.Ctype, msg.Values).Exec(); err != nil {
         log.Fatal(err)
     }
 }
