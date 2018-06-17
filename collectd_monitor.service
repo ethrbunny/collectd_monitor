@@ -1,0 +1,8 @@
+[Unit]
+Description=Collectd Monitor
+
+[Service]
+ExecStart=/usr/local/bin/collectd_monitor
+
+[Install]
+WantedBy=multi-user.target
